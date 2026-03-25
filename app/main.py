@@ -73,7 +73,7 @@ async def telegram_webhook(request: Request):
         return {"status": "ok"}
     except Exception as e:
         print(f"Ошибка при обработке вебхука: {e}")
-        raise HTTPException(status_code=500, detail="Internal error")
+        return {"status": "ok"}
 
 @app.get("/")
 def root():
